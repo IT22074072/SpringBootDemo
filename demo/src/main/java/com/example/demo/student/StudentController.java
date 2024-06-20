@@ -43,4 +43,11 @@ public class StudentController {
     public void registerStudent(@RequestBody Student student){  //We are getting that student from the client side(request body)
         studentService.addNewStudent(student);
     }
+
+
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable ("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
+
+    }
 }
