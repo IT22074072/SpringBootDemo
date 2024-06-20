@@ -27,7 +27,7 @@ public class Student {
     private LocalDate dob;
 
     @Transient
-    private Integer age;  //no need this as a column
+    private Integer age;  //it will be calculated
 
 
     public Student() {

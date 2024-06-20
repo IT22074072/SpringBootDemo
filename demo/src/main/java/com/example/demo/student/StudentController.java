@@ -1,12 +1,9 @@
 package com.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
+
 import java.util.List;
 
 // REST controllers handle HTTP requests and return JSON responses.
@@ -39,5 +36,11 @@ public class StudentController {
         // and returns the list of students.
         return studentService.getStudents();
 
+    }
+
+
+    @PostMapping
+    public void registerStudent(@RequestBody Student student){  //We are getting that student from the client side(request body)
+        studentService.addNewStudent(student);
     }
 }
